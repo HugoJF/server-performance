@@ -1,0 +1,43 @@
+"Games"
+{
+	"#default"
+	{
+		"Addresses"
+		{
+			"host_framestarttime_stddeviation"
+			{
+				"linux"
+				{
+					"signature" "HostValuesHelper"
+					"read" "75"
+				}
+			}
+			
+			"host_frametime_stddeviation"
+			{
+				"linux"
+				{
+					"signature" "HostValuesHelper"
+					"read" "83"
+				}
+			}
+			
+			"host_frameendtime_computationduration"
+			{
+				"linux"
+				{
+					"signature" "HostValuesHelper"
+					"read" "95"
+				}
+			}
+		}
+		"Signatures"
+		{
+			"HostValuesHelper"
+			{
+				"library"	"engine"
+				"linux"		"\x55\x31\xC0\x89\xE5\x57\x56\x53\x81\xEC\xCC\x00\x00\x00"
+			}
+		}
+	}
+}
