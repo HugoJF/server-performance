@@ -1,5 +1,4 @@
 #include <sourcemod>
-#include <json>
 #include <sv-var>
 
 #define PLUGIN_VERSION "1.0"
