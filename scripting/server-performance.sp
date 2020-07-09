@@ -2,7 +2,7 @@
 #include <sv-var>
 
 #define PLUGIN_VERSION "1.0"
-#define FRAMETIME_HISTORY_SIZE 10000
+#define FRAMETIME_HISTORY_SIZE 1000
 #define TICKRATE 128
 
 float g_fFrametimeHistory[FRAMETIME_HISTORY_SIZE];
