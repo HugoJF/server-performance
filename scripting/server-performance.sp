@@ -2,7 +2,7 @@
 #include <sv-var>
 
 #define PLUGIN_VERSION "1.0"
-#define FRAMETIME_HISTORY_SIZE 1000
+#define FRAMETIME_HISTORY_SIZE 3840
 #define TICKRATE 128
 
 float g_fFrametimeHistory[FRAMETIME_HISTORY_SIZE];
@@ -46,7 +46,7 @@ public Action Command_Summary(int args)
     int iterations = -1;
     float sum = 0.0;
 
-    int segments[] = {1, 5, 15, 30, 60};
+    int segments[] = {1, 5, 10, 20, 30};
     float percentiles[] = {0.001, 0.01, 0.1, 0.5};
 
     float[] accs = new float[sizeof(segments)];
@@ -112,11 +112,9 @@ public Action Command_Summary(int args)
         float relative_over = float(overs[i]) / float(ticks);
         float average = accs[i] / float(ticks);
 
-        PrintToServer("=== %d second window ===", segments[i]);
+        PrintToServer("%d second window" segments[i]);
         PrintToServer("   - Average: %f (%f FPS)", average, ToFps(average));
         PrintToServer("   - Over: %d frames (%f%% out of %d)", overs[i], relative_over, counts[i]);
-        PrintToServer("=== End of window ===");
-        PrintToServer("");
     }
 
     return Plugin_Handled;
